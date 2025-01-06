@@ -1,0 +1,18 @@
+li {
+  list-style: none;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+li.active {
+  background-color: #e0f7fa;
+}
+
+button {
+  margin-left: 10px;
+}

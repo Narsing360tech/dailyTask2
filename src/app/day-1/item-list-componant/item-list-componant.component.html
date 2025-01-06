@@ -1,0 +1,18 @@
+<div>
+  <input [(ngModel)]="newItem" placeholder="Add new item" />
+  <button (click)="addItem()">Add</button>
+  <button (click)="sortItems('asc')">Sort by Ascending</button>
+  <button (click)="sortItems('desc')">Sort by Descending</button>
+</div>
+
+<ul>
+  <li
+    *ngFor="let item of items; let i = index"
+    [@itemAnimation]
+    [appHighlightText]="activeItem === item"
+    (click)="setActiveItem(item)"
+  >
+    {{ item }}
+    <button (click)="removeItem(i)">Remove</button>
+  </li>
+</ul>
