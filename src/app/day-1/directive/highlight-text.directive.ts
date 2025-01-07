@@ -10,7 +10,7 @@ export class HighlightTextDirective {
 
   ngOnChanges() {
     if (this.isActive) {
-      this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', '#e0f7fa');
+      this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'green');
     } else {
       this.renderer.removeStyle(this.el.nativeElement, 'backgroundColor');
     }

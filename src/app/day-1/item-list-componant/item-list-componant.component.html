@@ -1,5 +1,5 @@
 <div>
-  <input [(ngModel)]="newItem" placeholder="Add new item" />
+  <input [(ngModel)]="newListItem" placeholder="Add new item" />
   <button (click)="addItem()">Add</button>
   <button (click)="sortItems('asc')">Sort by Ascending</button>
   <button (click)="sortItems('desc')">Sort by Descending</button>
@@ -7,7 +7,7 @@
 
 <ul>
   <li
-    *ngFor="let item of items; let i = index"
+    *ngFor="let item of listItems; let i = index"
     [@itemAnimation]
     [appHighlightText]="activeItem === item"
     (click)="setActiveItem(item)"

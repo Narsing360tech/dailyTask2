@@ -18,25 +18,25 @@ import { Component, Renderer2 } from '@angular/core';
   ]
 })
 export class ItemListComponantComponent {
-  items: string[] = [];
-  newItem: string = '';
+  listItems: string[] = [];
+  newListItem: string = '';
   activeItem: string | null = null;
 
   constructor() { }
 
   addItem() {
-    if (this.newItem.trim()) {
-      this.items.push(this.newItem.trim());
-      this.newItem = '';
+    if (this.newListItem.trim()) {
+      this.listItems.push(this.newListItem.trim());
+      this.newListItem = '';
     }
   }
 
   removeItem(index: number) {
-    this.items.splice(index, 1);
+    this.listItems.splice(index, 1);
   }
 
   sortItems(order: 'asc' | 'desc') {
-    this.items.sort((a, b) => {
+    this.listItems.sort((a, b) => {
       if (order === 'asc') {
         return a.localeCompare(b)
       }
