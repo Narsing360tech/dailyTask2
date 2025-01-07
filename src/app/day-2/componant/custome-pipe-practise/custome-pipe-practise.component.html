@@ -1,0 +1,6 @@
+<div *ngFor="let persons of itTeam">
+  <h6>{{ persons.name }}</h6>
+</div>
+<div>
+  <p>Concatenated Names: {{ itTeam | concatProperty : "name" }}</p>
+</div>
