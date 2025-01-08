@@ -1,0 +1,38 @@
+<h4>Users Data</h4>
+<div class="main">
+  <div class="left">
+    <input [(ngModel)]="newListItem" placeholder="Add new user" />
+    <button (click)="addUser()">Add</button>
+  </div>
+  <div class="right">
+    <input
+      [(ngModel)]="updatedUser"
+      (ngModelChange)="onNameChange($event)"
+      placeholder="Update user "
+    />
+    <button (click)="updateUser()">Update</button>
+  </div>
+</div>
+
+<ul class="user-list">
+  <div
+    *ngFor="let item of users$ | async; let i = index"
+    class="user-item"
+    (click)="setActiveItem(item)"
+    [appHighlightText]="activeItem === item"
+  >
+    <li class="list">
+      <div>
+        <span class="user-name">{{ item.name }}</span>
+      </div>
+      <div>
+        <button class="btn btn-remove" (click)="deleteUser(item.id)">
+          Remove
+        </button>
+        <button class="btn btn-update" (click)="selectUser(item)">
+          Update
+        </button>
+      </div>
+    </li>
+  </div>
+</ul>
