@@ -1,0 +1,43 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name" type="text" />
+    <div
+      *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
+      class="error-message"
+    >
+      Name is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email" type="email" />
+    <div
+      *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+      class="error-message"
+    >
+      Please enter a valid email.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Submit</button>
+</form>
+
+<div *ngIf="SubmissionState !== 'first'" [@loadingState]="SubmissionState">
+  <div *ngIf="SubmissionState === 'loading'" class="loading">
+    <div class="spinner"></div>
+  </div>
+  <div *ngIf="SubmissionState === 'success'" class="success">
+    Form Submitted Data Successfully
+  </div>
+  <div *ngIf="SubmissionState === 'error'" class="error">
+    Form submission is failed
+  </div>
+</div>
+
+<div class="card" *ngIf="SubmissionState === 'success'">
+  <h3>Submitted the data</h3>
+  <p>{{ this.submittedData?.name }}</p>
+  <p>{{ this.submittedData?.email }}</p>
+</div>

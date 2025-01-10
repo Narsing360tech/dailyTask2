@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ItemListComponantComponent } from './day-1/item-list-componant/item-list-componant.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HighlightTextDirective } from './day-1/directive/highlight-text.directive';
 import { ConcatPropertyPipe } from './day-2/pipe/concat-property.pipe';
 import { CustomePipePractiseComponent } from './day-2/componant/custome-pipe-practise/custome-pipe-practise.component';
@@ -15,6 +15,8 @@ import { constUserReducer } from './State/day3.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './State/day3.effect';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { TaskDay4Component } from './day-4/task-day-4/task-day-4.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -23,13 +25,16 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     HighlightTextDirective,
     ConcatPropertyPipe,
     CustomePipePractiseComponent,
-    Day3Component
+    Day3Component,
+    TaskDay4Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
     StoreModule.forRoot({
       users: constUserReducer
     }),
