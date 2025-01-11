@@ -3,8 +3,24 @@
     <div formGroupName="personalInfo">
       <label for="name">Name:</label>
       <input id="name" formControlName="name" />
+      <div
+        *ngIf="
+          dynamicForm.get('personalInfo.name')?.invalid &&
+          dynamicForm.get('personalInfo.name')?.touched
+        "
+      >
+        name is required
+      </div>
       <label for="email">Email:</label>
       <input id="email" formControlName="email" />
+      <div
+        *ngIf="
+          dynamicForm.get('personalInfo.email')?.invalid &&
+          dynamicForm.get('personalInfo.email')?.touched
+        "
+      >
+        please enter valid email
+      </div>
     </div>
     <div formArrayName="addresses">
       <div
@@ -14,12 +30,27 @@
         <h4>Address {{ i + 1 }}</h4>
         <label for="street-{{ i }}">Street:</label>
         <input id="street-{{ i }}" formControlName="street" />
+        <div
+          *ngIf="
+            address.get('street')?.invalid && address.get('street')?.touched
+          "
+        >
+          street is required
+        </div>
 
         <label for="city-{{ i }}">City:</label>
         <input id="city-{{ i }}" formControlName="city" />
+        <div
+          *ngIf="address.get('city')?.invalid && address.get('city')?.touched"
+        >
+          street is required
+        </div>
 
         <label for="zip-{{ i }}">Zip Code:</label>
         <input id="zip-{{ i }}" formControlName="zip" />
+        <div *ngIf="address.get('zip')?.invalid && address.get('zip')?.touched">
+          Zip is required
+        </div>
 
         <button type="button" (click)="removeAddress(i)">Remove Address</button>
       </div>

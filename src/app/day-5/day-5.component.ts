@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-day-5',
@@ -11,8 +11,8 @@ export class Day5Component {
   constructor(private fb: FormBuilder) {
     this.dynamicForm = this.fb.group({
       personalInfo: this.fb.group({
-        name: [''],
-        email: [''],
+        name: ['', [Validators.required]],
+        email: ['', [Validators.required, Validators.email]],
       }),
       addresses: this.fb.array([]),
     });
@@ -24,9 +24,9 @@ export class Day5Component {
 
   addAddress() {
     const addressGroup = this.fb.group({
-      street: ['',],
-      city: ['',],
-      zip: ['',],
+      street: ['', Validators.required],
+      city: ['', Validators.required],
+      zip: ['', Validators.required],
     });
     this.addresses.push(addressGroup);
   }
