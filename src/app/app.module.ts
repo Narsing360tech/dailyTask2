@@ -17,6 +17,7 @@ import { UserEffects } from './State/day3.effect';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { TaskDay4Component } from './day-4/task-day-4/task-day-4.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Day5Component } from './day-5/day-5.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ConcatPropertyPipe,
     CustomePipePractiseComponent,
     Day3Component,
-    TaskDay4Component
+    TaskDay4Component,
+    Day5Component
   ],
   imports: [
     BrowserModule,
