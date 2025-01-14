@@ -18,6 +18,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { TaskDay4Component } from './day-4/task-day-4/task-day-4.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Day5Component } from './day-5/day-5.component';
+import { ProductListComponent } from './day-8/product-list/product-list.component';
+import { ProductSummaryComponent } from './day-8/product-summary/product-summary.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { Day5Component } from './day-5/day-5.component';
     CustomePipePractiseComponent,
     Day3Component,
     TaskDay4Component,
-    Day5Component
+    Day5Component,
+    ProductListComponent,
+    ProductSummaryComponent,
+    LandingPageComponent,
   ],
   imports: [
     BrowserModule,

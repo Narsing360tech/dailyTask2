@@ -1,0 +1,32 @@
+.card-container {
+  display: flex;
+  gap: 20px;
+  max-height: 300px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+}
+.Other-data-holder {
+  margin-top: 10px;
+}
